@@ -18,9 +18,9 @@ open class CalculatorMainFunctions(
 ) : Functions {
 
     override fun countPlusExpression(str: String): Double {
-        val matchResult = Regex("""([-]?[0-9]*\.?[0-9]*)[+]([-]?[0-9]*\.?[0-9]*)""").find(str)
-        if (matchResult == null) return error("Incorrect function")
-        val container = matchResult.groupValues.drop(1).map { it.toDouble() }
+        val matchResult1 = Regex("""([-]?[0-9]*\.?[0-9]*)[+]([-]?[0-9]*\.?[0-9]*)""").find(str)
+        if (matchResult1 == null) return error("Incorrect function")
+        val container = matchResult1.groupValues.drop(1).map { it.toDouble() }
         return container.sum()
     }
 
