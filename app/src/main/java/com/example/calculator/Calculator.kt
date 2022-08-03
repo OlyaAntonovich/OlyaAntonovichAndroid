@@ -8,14 +8,14 @@ open class Calculator {
 
         var newString = ""
         var result: Double
-        var isFlag1 = true
+        var isFlag = true
 
 
         if (Regex(matcherGroup).containsMatchIn(str)) {
 
             var str1 = str
 
-            while (isFlag1) {
+            while (isFlag) {
 
                 val subString = calculate(inter, (Regex(matcherGroup).find(str1)?.value.toString()))
                 val subString1 = subString.replace("(", "")
@@ -28,10 +28,10 @@ open class Calculator {
 
                 if (Regex(matcherGroup).containsMatchIn(newString)) {
                     str1 = newString
-                    isFlag1 = true
+                    isFlag = true
                 } else {
                     str1 = newString
-                    isFlag1 = false
+                    isFlag = false
                 }
 
             }
